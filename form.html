@@ -16,8 +16,10 @@ body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg)
 .top h1{font-size:clamp(2rem,6vw,3rem);line-height:1.05;letter-spacing:-.03em}
 .top p{margin-top:14px;font-size:1.1rem;color:#e9ebff}
 form{margin:-32px auto 60px;width:min(720px,100% - 40px)}
-fieldset{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:28px;margin-bottom:20px;display:grid;gap:18px}
-legend{font-size:1.25rem;font-weight:800;padding:0 8px;margin-left:-8px}
+fieldset{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:28px;margin-bottom:24px;display:grid;gap:18px}
+fieldset:first-of-type{background:var(--sun);border-color:var(--sun);padding:32px 28px}
+legend{font-size:1.25rem;font-weight:800;padding:6px 12px;margin-left:-8px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+fieldset:first-of-type legend{background:var(--ink);color:var(--sun);border-color:var(--ink)}
 label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
 label small{font-weight:400;color:var(--muted)}
 input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
