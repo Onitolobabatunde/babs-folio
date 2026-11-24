@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Start your ads | Babs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2d3cf5;--sun:#ffd23f;--bg:#f4f6fc;--surface:#fff;--ink:#0e1033;--muted:#4a4d73;--line:#d7dbf0;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1033;--surface:#1a1f5c;--ink:#f4f6fc;--muted:#b3b8e6;--line:#2c3278}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.top{background:var(--blue);color:#fff;padding:56px 20px 64px}
+.wrap{width:min(720px,100%);margin-inline:auto}
+.top h1{font-size:clamp(2rem,6vw,3rem);line-height:1.05;letter-spacing:-.03em}
+.top p{margin-top:14px;font-size:1.1rem;color:#e9ebff}
+form{margin:-32px auto 60px;width:min(720px,100% - 40px)}
+fieldset{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:28px;margin-bottom:20px;display:grid;gap:18px}
+legend{font-size:1.25rem;font-weight:800;padding:0 8px;margin-left:-8px}
+label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+textarea{min-height:90px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:600px){.row{grid-template-columns:1fr}fieldset{padding:22px}}
+button{font:inherit;font-weight:600;width:100%;padding:16px;border:0;border-radius:999px;background:var(--sun);color:#0e1033;cursor:pointer;font-size:1.1rem}
+.note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:12px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <h1>Let’s get your ads running.</h1>
+  <p>Answer a few questions about your business. It takes about 2 minutes, and I’ll reply on Email or WhatsApp with a plan.</p>
+</div></header>
+
+  <form id="f" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="514681b7-9434-417d-ab19-72ac74df04b4">
+  <fieldset>
+    <legend>About you</legend>
+    <div class="row">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Business name<input name="biz" required></label>
+    </div>
+    <div class="row">
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Phone or WhatsApp<input name="phone" type="tel" required autocomplete="tel"></label>
+    </div>
+    <div class="row">
+      <label>Country<select name="country" id="country" required><option value="">Choose your country</option></select></label>
+      <label>City or area you serve<input name="city" required></label>
+    </div>
+    <label>Website or social page <small>If you have one</small><input name="site"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Your business and goal</legend>
+    <label>What do you sell or offer?<textarea name="offer" required></textarea></label>
+    <div class="row">
+      <label>Average value of one customer or job<input name="value" placeholder="e.g. $500" required></label>
+      <label>Main goal
+        <select name="goal" required>
+          <option value="">Choose one</option><option>Phone calls</option><option>Leads and enquiries</option><option>Booked appointments</option><option>Online sales</option><option>Not sure yet</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label>Monthly ad budget <small>In US dollars</small>
+        <select name="budget" required>
+          <option value="">Choose one</option><option>Under $500</option><option>$500 to $1,000</option><option>$1,000 to $3,000</option><option>$3,000 to $5,000</option><option>Over $5,000</option>
+        </select>
+      </label>
+      <label>When do you want to start?
+        <select name="start" required><option value="">Choose one</option><option>As soon as possible</option><option>Within 2 weeks</option><option>Within a month</option><option>Just exploring</option></select>
+      </label>
+    </div>
+    <label>Anything else I should know? <small>Optional</small><textarea name="extra"></textarea></label>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+  <!-- <p class="note">This opens WhatsApp with your answers ready. Press send there to reach me.</p> -->
+</form>
+
+<script>
+(function(){
+  var f=document.getElementById('f');
+  var labels={name:'Name',biz:'Business',email:'Email',phone:'Phone',country:'Country',city:'City or area',site:'Website',offer:'Offer',value:'Avg job value',goal:'Goal',budget:'Monthly budget (USD)',start:'Start',extra:'Notes'};
+  var C='United States,Canada,United Kingdom,Afghanistan,Albania,Algeria,Andorra,Angola,Antigua and Barbuda,Argentina,Armenia,Australia,Austria,Azerbaijan,Bahamas,Bahrain,Bangladesh,Barbados,Belarus,Belgium,Belize,Benin,Bhutan,Bolivia,Bosnia and Herzegovina,Botswana,Brazil,Brunei,Bulgaria,Burkina Faso,Burundi,Cabo Verde,Cambodia,Cameroon,Central African Republic,Chad,Chile,China,Colombia,Comoros,Congo,Costa Rica,Croatia,Cuba,Cyprus,Czechia,Democratic Republic of the Congo,Denmark,Djibouti,Dominica,Dominican Republic,Ecuador,Egypt,El Salvador,Equatorial Guinea,Eritrea,Estonia,Eswatini,Ethiopia,Fiji,Finland,France,Gabon,Gambia,Georgia,Germany,Ghana,Greece,Grenada,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Hungary,Iceland,India,Indonesia,Iran,Iraq,Ireland,Israel,Italy,Ivory Coast,Jamaica,Japan,Jordan,Kazakhstan,Kenya,Kiribati,Kuwait,Kyrgyzstan,Laos,Latvia,Lebanon,Lesotho,Liberia,Libya,Liechtenstein,Lithuania,Luxembourg,Madagascar,Malawi,Malaysia,Maldives,Mali,Malta,Marshall Islands,Mauritania,Mauritius,Mexico,Micronesia,Moldova,Monaco,Mongolia,Montenegro,Morocco,Mozambique,Myanmar,Namibia,Nauru,Nepal,Netherlands,New Zealand,Nicaragua,Niger,Nigeria,North Korea,North Macedonia,Norway,Oman,Pakistan,Palau,Palestine,Panama,Papua New Guinea,Paraguay,Peru,Philippines,Poland,Portugal,Qatar,Romania,Russia,Rwanda,Saint Kitts and Nevis,Saint Lucia,Saint Vincent and the Grenadines,Samoa,San Marino,Sao Tome and Principe,Saudi Arabia,Senegal,Serbia,Seychelles,Sierra Leone,Singapore,Slovakia,Slovenia,Solomon Islands,Somalia,South Africa,South Korea,South Sudan,Spain,Sri Lanka,Sudan,Suriname,Sweden,Switzerland,Syria,Taiwan,Tajikistan,Tanzania,Thailand,Timor-Leste,Togo,Tonga,Trinidad and Tobago,Tunisia,Turkey,Turkmenistan,Tuvalu,Uganda,Ukraine,United Arab Emirates,Uruguay,Uzbekistan,Vanuatu,Vatican City,Venezuela,Vietnam,Yemen,Zambia,Zimbabwe'.split(',');
+  var sel=document.getElementById('country');C.forEach(function(c){var o=document.createElement('option');o.textContent=c;sel.appendChild(o)});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var lines=['New ads enquiry'];
+    Object.keys(labels).forEach(function(k){
+      var el=f.elements[k];
+      if(el&&el.value.trim())lines.push(labels[k]+': '+el.value.trim());
+    });
+    window.location.href='https://wa.me/2347073092869?text='+encodeURIComponent(lines.join('\n'));
+  });
+})();
+</script>
+</body>
+</html>
